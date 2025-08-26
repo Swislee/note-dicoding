@@ -2,12 +2,12 @@ const hapi = require('@hapi/hapi');
 const got = require('got');
 
 const {
-        ORDER_SERVICE_HOST = 4000,
-        USER_SERVICE_HOST = 5000,
-    } = process.env;
+    ORDER_SERVICE_HOST = 4000,
+    USER_SERVICE_HOST = 5000,
+} = process.env;
 
-    const orderService = `http://localhost:${ORDER_SERVICE_HOST}`;
-    const userService = `http://localhost:${USER_SERVICE_HOST}`;
+const orderService = `http://localhost:${ORDER_SERVICE_HOST}`;
+const userService = `http://localhost:${USER_SERVICE_HOST}`;
 
 
 const init = async () => {
@@ -16,7 +16,7 @@ const init = async () => {
         host: 'localhost',
     });
 
-    
+
     server.route([
         {
             method: 'GET',
@@ -54,5 +54,6 @@ const init = async () => {
     await server.start();
     console.log(`Server berjalan pada ${server.info.uri}`);
 };
+
 
 init();

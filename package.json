@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "SET PORT=3000 && node server.js",
-    "start:order": "SET PORT=4000 && order-service.js",
-    "start:user": "SET PORT=5000 && user-service.js"
+    "start:order": "SET PORT=4000 && node order-service.js",
+    "start:user": "SET PORT=5000 && node user-service.js"
   },
   "keywords": [],
   "author": "",

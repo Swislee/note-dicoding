@@ -1,11 +1,11 @@
 const http = require('http');
-const { URL } = require('url');
+const url = require('url');
 
 const menus = ['Nasi Goreng', 'Mie Goreng', 'Kwetiaw Goreng, Bakso', 'Sate Ayam'];
 const MISSING = 3;
 
-const httpServer = http.createServer((req, res) => {
-    const pathname = url.parse(req.url);
+const server = http.createServer((req, res) => {
+    const { pathname } = url.parse(req.url);
     let id = pathname.match(/^\/(d+)$/);
 
     if (!id) {
@@ -24,7 +24,7 @@ const httpServer = http.createServer((req, res) => {
 
     res.end(JSON.stringify({
         id,
-        menu: menus[id % menus.lenght],
+        menu: menus[id % menus.length],
     }));
 });
 

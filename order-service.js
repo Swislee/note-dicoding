@@ -6,7 +6,7 @@ const MISSING = 3;
 
 const server = http.createServer((req, res) => {
     const { pathname } = url.parse(req.url);
-    let id = pathname.match(/^\/(d+)$/);
+    let id = pathname.match(/^\/(\d+)$/);
 
     if (!id) {
         res.statusCode = 400;
